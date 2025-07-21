@@ -1,0 +1,16 @@
+
+{%  extends 'base.html' %}
+
+{% block title %} Registro de Fornecedor {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Registro de Fornecedor</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{  form.as_p }}
+         <a href="{% url 'coder:index' %}" class="btn btn-secondary">Voltar</a>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+    </div>
+{% endblock %}

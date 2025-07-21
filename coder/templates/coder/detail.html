@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Fornecedor: {{ fornecedor.name }}{% endblock %}
+
+{% block content %}
+    
+<div class="container">
+<h2>Detalhes do Fornecedor:</h2>
+<p><strong>Nome:</strong> {{ fornecedor.name }}</p>
+<p><strong>Email:</strong> {{ fornecedor.email }}</p>
+<p><strong>Criado em:</strong> {{ fornecedor.created_at }}</p>
+<p><strong>Atualizado em:</strong> {{ fornecedor.updated_at }}</p>
+
+    <a href="{% url 'coder:index' %}" class="btn btn-secondary">Voltar</a>
+    <a href="{% url 'coder:delete' fornecedor.id %}" class="btn btn-danger">Excluir</a>
+    <a href="{% url 'coder:update' fornecedor.id %}" class="btn btn-primary">Atualizar</a>
+
+</div>
+{% endblock %}

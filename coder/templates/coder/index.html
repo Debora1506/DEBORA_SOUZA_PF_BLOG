@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Fornecedor{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="mt-4">Fornecedor</h2>
+        <a href="{% url 'coder:create' %}" class="btn btn-primary mb-3">Registrar novo fornecedor</a>
+         <ul class ="list-group">
+        {% for fornecedor in fornecedor %}
+        <li class="list-group-item">
+            <a href="{% url 'coder:detail' fornecedor.id %}">{{ fornecedor.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+
+
+{% endblock %}

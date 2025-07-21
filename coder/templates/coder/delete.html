@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Exclusão do Fornecedor {{ fornecedor.name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Exclusão do Fornecedor {{ fornecedor.name }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <p>Tem certeza que deseja excluir este fornecedor?</p>
+            <a href="{% url 'coder:index' %}" class="btn btn-secondary">Voltar</a>
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+
+    </div>
+{% endblock %}
+
+
+ 
+
+ 
